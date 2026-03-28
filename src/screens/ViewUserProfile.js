@@ -13,7 +13,7 @@ import { Feather } from '@expo/vector-icons';
 import { AuthContext } from '../context/AuthContext';
 
 const ViewUserProfile = ({ navigation }) => {
-    const { user, logout, deleteAccount } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     // Modal State
     const [modalVisible, setModalVisible] = useState(false);
@@ -38,17 +38,6 @@ const ViewUserProfile = ({ navigation }) => {
         setModalVisible(true);
     };
 
-    const openDeleteModal = () => {
-        setModalConfig({
-            type: 'delete',
-            title: 'Delete Account',
-            message: 'This action is permanent. All your job data and notes will be lost forever.',
-            icon: 'trash-2',
-            confirmText: 'Delete Forever',
-            confirmColor: '#FF4D4D',
-        });
-        setModalVisible(true);
-    };
 
     const handleConfirm = async () => {
         setModalVisible(false);
@@ -154,11 +143,6 @@ const ViewUserProfile = ({ navigation }) => {
                         <Feather name="log-out" size={20} color="#FFF" />
                         <Text style={styles.logoutBtnText}>Logout</Text>
                     </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.deleteBtn} onPress={openDeleteModal}>
-                        <Feather name="trash-2" size={18} color="#FF4D4D" />
-                        <Text style={styles.deleteBtnText}>Delete Account</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -171,7 +155,7 @@ const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#F0F5FF', paddingTop: 30 },
     header: {
         flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-        paddingHorizontal: 20, paddingVertical: 15, 
+        paddingHorizontal: 20, paddingVertical: 15,
         // backgroundColor: '#FFF'
     },
     backButton: {
@@ -215,12 +199,6 @@ const styles = StyleSheet.create({
         shadowColor: '#3277F1', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 5, elevation: 3
     },
     logoutBtnText: { color: '#FFF', fontSize: 16, fontWeight: 'bold', marginLeft: 10 },
-    deleteBtn: {
-        flexDirection: 'row', height: 60, borderRadius: 15,
-        alignItems: 'center', justifyContent: 'center', borderWidth: 1,
-        borderColor: '#FF4D4D', borderStyle: 'dashed'
-    },
-    deleteBtnText: { color: '#FF4D4D', fontSize: 16, fontWeight: '600', marginLeft: 10 },
 
     // --- Modal Styles ---
     modalOverlay: {
