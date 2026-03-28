@@ -4,15 +4,25 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/netinfo": "^12.0.1",
+    "@react-navigation/native": "^7.2.2",
+    "@react-navigation/stack": "^7.8.9",
+    "axios": "^1.14.0",
     "expo": "55.0.10-canary-20260328-2049187",
+    "expo-linear-gradient": "55.0.10-canary-20260328-2049187",
+    "expo-sqlite": "55.0.12-canary-20260328-2049187",
     "expo-status-bar": "55.0.5-canary-20260328-2049187",
     "react": "19.2.0",
-    "react-native": "0.83.4"
+    "react-native": "0.83.4",
+    "react-native-gesture-handler": "^2.30.1",
+    "react-native-safe-area-context": "^5.7.0",
+    "react-native-screens": "^4.24.0"
   },
   "private": true
 }

@@ -1,0 +1,21 @@
+/src
+ ├── api/
+ │   └── client.js
+ ├── components/
+ │   └── NetworkBanner.js    # The bottom online/offline banner
+ ├── context/
+ │   ├── AuthContext.js      # Updated with signup
+ │   └── SyncContext.js      # Updated with edit job, add note, add video
+ ├── navigation/
+ │   └── AppNavigator.js     # Updated with new screens
+ ├── screens/
+ │   ├── WelcomeScreen.js
+ │   ├── SignUpScreen.js
+ │   ├── SignInScreen.js
+ │   ├── JobListScreen.js
+ │   ├── CreateJobScreen.js
+ │   ├── EditJobScreen.js
+ │   └── JobDetailScreen.js  # Handles Overview, Notes, and Video tabs
+ ├── utils/
+ │   └── storage.js
+App.js
